@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarah's Birthday & USA Dream 🌟</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Dancing+Script:wght@700&display=swap');
+        
+        :root {
+            --primary: #166088;
+            --secondary: #0a2342;
+            --accent: #4fc3f7;
+            --gold: #FFD700;
+            --light: #f8f9fa;
+            --success: #4CAF50;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
+            margin: 0;
+            padding: 0;
+            color: var(--secondary);
+            min-height: 100vh;
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .container {
+            background: rgba(255, 255, 255, 0.97);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            padding: 40px;
+            max-width: 800px;
+            margin: 20px;
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 1.5s ease-out;
+            border: 2px solid var(--gold);
+        }
+        
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            color: var(--primary);
+            font-size: 4rem;
+            margin: 0 0 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+            display: inline-block;
+        }
+        
+        h1::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 3px;
+            background: var(--gold);
+            border-radius: 3px;
+        }
+        
+        .birthday-girl {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .message {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin: 25px 0;
+            text-align: center;
+            padding: 0 15px;
+        }
+        
+        .special-wish {
+            background: linear-gradient(135deg, rgba(79, 195, 247, 0.15) 0%, rgba(22, 96, 136, 0.1) 100%);
+            border-left: 4px solid var(--gold);
+            padding: 20px;
+            border-radius: 0 10px 10px 0;
+            margin: 25px 0;
+            text-align: left;
+            position: relative;
+            animation: slideIn 1s ease-out;
+        }
+        
+        .special-wish::before {
+            content: "🌠";
+            position: absolute;
+            left: -15px;
+            top: -15px;
+            font-size: 1.8rem;
+        }
+        
+        .signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-top: 30px;
+            opacity: 0;
+            animation: fadeIn 2s ease-in 1s forwards;
+        }
+        
+        .floating-star {
+            position: absolute;
+            font-size: 1.8rem;
+            color: var(--gold);
+            animation: float 4s ease-in-out infinite;
+            opacity: 0.8;
+            z-index: -1;
+        }
+        
+        .dua {
+            font-size: 1.5rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin: 25px 0;
+            padding: 15px;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 10px;
+            display: inline-block;
+            border: 1px dashed var(--gold);
+        }
+        
+        .success-box {
+            background: linear-gradient(135deg, rgba(22, 96, 136, 0.1) 0%, rgba(79, 195, 247, 0.1) 100%);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+            border: 2px dashed var(--accent);
+            animation: pulse 2s infinite;
+        }
+        
+        button {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            border: none;
+            padding: 15px 35px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.4s;
+            margin: 20px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        
+        button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .usa-flag {
+            font-size: 2rem;
+            margin: 10px;
+            animation: bounce 2s infinite;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateX(-50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-25px) rotate(10deg); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 rgba(79, 195, 247, 0.4); }
+            50% { transform: scale(1.02); box-shadow: 0 0 20px rgba(79, 195, 247, 0.6); }
+            100% { transform: scale(1); box-shadow: 0 0 0 rgba(79, 195, 247, 0.4); }
+        }
+        
+        @keyframes confettiFall {
+            0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        .confetti {
+            position: fixed;
+            width: 12px;
+            height: 12px;
+            background-color: var(--gold);
+            border-radius: 50%;
+            animation: confettiFall 4s linear forwards;
+            z-index: 1000;
+            opacity: 0.8;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 600px;
+            margin: 30px auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            background: var(--gold);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1.5px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            margin: 20px 0;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border: 3px solid var(--gold);
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+            text-align: right;
+        }
+        
+        .right {
+            left: 50%;
+            text-align: left;
+        }
+        
+        .left::after {
+            right: -10px;
+        }
+        
+        .right::after {
+            left: -10px;
+        }
+        
+        .timeline-content {
+            padding: 15px;
+            background: rgba(79, 195, 247, 0.1);
+            border-radius: 10px;
+            border: 1px solid var(--accent);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Happy Birthday Sarah!</h1>
+        <div class="birthday-girl">May This Year Bring Your Dreams to Life 🌍</div>
+        
+        <div class="message">
+            <p><strong>Happy Birthday, Sarah! 🎉</strong> May this year bring you endless joy, good health, and all the success your heart desires. You deserve the very best!</p>
+            <p>May every day of this new year be filled with love, laughter, and beautiful moments.</p>
+        </div>
+        
+        <div class="special-wish">
+            <p>This year, as you step closer to your <strong>American dream</strong>, I pray that Allah opens every door for you.</p>
+            <p><strong>Insha-Allah</strong>, your visa process will be smooth, and you’ll build a beautiful life in the USA.</p>
+        </div>
+        
+        <div class="success-box">
+            <p>🌟 <strong>This Year, I Wish For You:</strong></p>
+            <p>✔ <strong>Visa approval</strong> without hurdles</p>
+            <p>✔ A <strong>thriving life</strong> in the USA</p>
+            <p>✔ <strong>Happiness & stability</strong> in your new home</p>
+            <p>✔ <strong>Success</strong> in every step of your journey</p>
+        </div>
+        
+        <div class="dua">"رَبِّ ٱجْعَلْنِي مُقِيمَ ٱلصَّلَوٰةِ وَمِن ذُرِّيَّتِي ۚ رَبَّنَا وَتَقَبَّلْ دُعَآءِ"<br>(My Lord, make me steadfast in prayer, and accept my dua)</div>
+        
+        <div class="timeline">
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <p><strong>Today</strong> - Your birthday marks the start of an amazing year!</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <p><strong>Soon Insha-Allah</strong> - Your USA visa approval 🎉</p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <p><strong>Future</strong> - Building your dream life in America 🇺🇸</p>
+                </div>
+            </div>
+        </div>
+        
+        <button id="wishBtn">Make a Special Birthday Dua 🌠</button>
+        
+        <div id="wishSection" class="hidden">
+            <div class="special-wish">
+                <p>Close your eyes, make a wish, and trust that <strong>Allah will make it happen at the perfect time</strong>, Your dreams are valid, and your efforts will pay off. <strong>Insha-Allah!<strong> </p>
+                <p>Your dream of settling in the USA is <strong>closer than you think</strong>.  <strong>Insha-Allah!</strong></p>
+            </div>
+            <button id="confettiBtn">Release Blessings for Sarah's Journey 🎉</button>
+        </div>
+        
+        <div class="signature">With Love & Prayers,<br>Your best Friend and well-wisher <strong>waheed<strong></div>
+    </div>
+
+    <script>
+        // Create floating stars
+        function createStars() {
+            const stars = ["★", "☆", "✧", "✦", "✶", "🇺🇸"];
+            for (let i = 0; i < 20; i++) {
+                const star = document.createElement('div');
+                star.className = 'floating-star';
+                star.textContent = stars[Math.floor(Math.random() * stars.length)];
+                star.style.left = Math.random() * 100 + 'vw';
+                star.style.top = Math.random() * 100 + 'vh';
+                star.style.animationDelay = Math.random() * 4 + 's';
+                star.style.fontSize = (Math.random() * 15 + 20) + 'px';
+                document.body.appendChild(star);
+            }
+        }
+        
+        // Create confetti
+        function createConfetti() {
+            const colors = ['#166088', '#4fc3f7', '#FFD700', '#0a2342', '#4CAF50'];
+            for (let i = 0; i < 100; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                confetti.style.animationDelay = Math.random() * 2 + 's';
+                confetti.style.width = (Math.random() * 15 + 8) + 'px';
+                confetti.style.height = (Math.random() * 15 + 8) + 'px';
+                document.body.appendChild(confetti);
+            }
+        }
+        
+        // Event Listeners
+        document.getElementById('wishBtn').addEventListener('click', function() {
+            document.getElementById('wishSection').classList.remove('hidden');
+            createStars();
+        });
+        
+        document.getElementById('confettiBtn').addEventListener('click', function() {
+            createConfetti();
+            setTimeout(() => {
+                alert("Sarah, may all your dreams come true! Insha-Allah 🌟✨");
+            }, 1000);
+        });
+        
+        // Initialize
+        window.addEventListener('load', function() {
+            createStars();
+        });
+    </script>
+</body>
+</html>
